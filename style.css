@@ -102,14 +102,6 @@ h1 {
     }
 
     .buttons {
-        grid-template-columns: repeat(3, 1fr); /* Change to 3 columns on very small screens */
-    }
-
-    #add {
-        grid-column: 3; /* Adjust position for smaller screens */
-    }
-
-    #equals {
-        grid-column: 3; /* Adjust position for smaller screens */
+        grid-template-columns: repeat(4, 1fr); /* Change to 3 columns on very small screens */
     }
 }
