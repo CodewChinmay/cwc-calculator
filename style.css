@@ -1,0 +1,115 @@
+* {
+    margin: 0;
+    box-sizing: border-box; /* Ensure padding and margin do not affect total width/height */
+}
+
+.container-fluid {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.calculator {
+    background-color: rgb(245, 245, 245);
+    padding: 10px;
+    border-radius: 8px; /* Added rounded corners for aesthetics */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); /* Added subtle shadow */
+}
+
+h1 {
+    text-align: center;
+    font-size: 3em;
+}
+
+#display {
+    font-size: 30px;
+    text-align: right;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    padding: 10px;
+    margin-bottom: 20px; /* Added margin to separate from buttons */
+    caret-color: black; /* Cursor color */
+    width: 100%; /* Full width to adapt to container */
+}
+
+/* Style to ensure the input cursor is always on the right */
+#display:focus {
+    outline: none; /* Remove default outline */
+    border: 1px solid #80bdff; /* Highlight border on focus */
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Use fractional units for responsiveness */
+    grid-template-rows: repeat(5, 1fr); /* Same here for rows */
+    gap: 10px;
+    width: 100%; /* Full width to adapt to container */
+}
+
+.btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 2em;
+    border: none;
+    border-radius: 5px; /* Added rounded corners */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+.btn:hover {
+    background-color: black; /* Darken on hover */
+}
+
+#add {
+    grid-column: 4;
+    grid-row: 2 / 4;
+}
+
+#equals {
+    grid-column: 4;
+    grid-row: 4 / 6;
+}
+
+/* Responsive styles */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 2em; /* Smaller title on small screens */
+    }
+
+    #display {
+        font-size: 24px; /* Smaller font size for input */
+    }
+
+    .btn {
+        font-size: 1.5em; /* Smaller button text */
+    }
+}
+
+@media (max-width: 400px) {
+    h1 {
+        font-size: 1.5em; /* Further reduce title size */
+    }
+
+    #display {
+        font-size: 20px; /* Further reduce input font size */
+    }
+
+    .btn {
+        font-size: 1.2em; /* Smaller button text */
+        padding: 15px; /* Increase padding for touch targets */
+    }
+
+    .buttons {
+        grid-template-columns: repeat(3, 1fr); /* Change to 3 columns on very small screens */
+    }
+
+    #add {
+        grid-column: 3; /* Adjust position for smaller screens */
+    }
+
+    #equals {
+        grid-column: 3; /* Adjust position for smaller screens */
+    }
+}
